@@ -892,6 +892,7 @@ const bigDesktop = window.matchMedia('(max-width: 1440px)');
 //pin: true - при скролле блок будет как бы на месте 
 //stagger: 1 - разница во времени появления одинаковых классов
 //end: '+=300px' - анимация будет работать на протяжении 300px
+
 const tl = gsap.timeline();//задаем порядок начала анимации разных элементов
 
 tl.fromTo(
@@ -924,14 +925,6 @@ if(laptopScreen.matches) {
             scale: 0.8,
             opacity: 0,
     });
-    gsap.to('.home[style]', {
-        scrollTrigger: {
-            trigger: '.home', 
-            start: 'top top', 
-            scrub: true
-        },
-            scale: 1.2,
-    });
     gsap.to('.home__messanger', {
         scrollTrigger: {
             trigger: '.home', 
@@ -946,7 +939,8 @@ if(laptopScreen.matches) {
 
 
 //----------------------------------slider-main-------------------------------------------//
-const sliderMain = gsap.timeline();
+if(laptopScreen.matches) {
+    const sliderMain = gsap.timeline();
 
 sliderMain.from('.slider-main', {
     scrollTrigger: {
@@ -1017,33 +1011,38 @@ sliderMain.from('.slider-main', {
         stagger: 1,
         duration: '3',
 });
+}
 
 //----------------------------------choice-car--------------------------------------------//
 
-gsap.from('.choice-car__list li', {
-    scrollTrigger: {
-        trigger: '.choice-car',  
-        start: '-50% top', 
-    },
-        yPercent: 100,
-        scale: 0,
-        opacity: 0,
-        stagger: 0.5,
-});
-gsap.from('.choice-car__card', {
-    scrollTrigger: {
-        trigger: '.choice-car', 
-        start: '-50% top', 
-    },
-        scale: 0,
-        transformOrigin: 'right top',
-        ease: 'none',
-        stagger: 0.5,
-        duration: '0.5',
-});
+if(laptopScreen.matches) {
+    gsap.from('.choice-car__list li', {
+        scrollTrigger: {
+            trigger: '.choice-car',  
+            start: '-50% top', 
+        },
+            yPercent: 100,
+            scale: 0,
+            opacity: 0,
+            stagger: 0.5,
+    });
+    gsap.from('.choice-car__card', {
+        scrollTrigger: {
+            trigger: '.choice-car', 
+            start: '-50% top', 
+        },
+            scale: 0,
+            transformOrigin: 'right top',
+            ease: 'none',
+            stagger: 0.5,
+            duration: '0.5',
+    });
+}
 
 //----------------------------------about-us--------------------------------------------//
-const aboutUs = gsap.timeline()
+
+if(laptopScreen.matches) {
+    const aboutUs = gsap.timeline()
 aboutUs.from('.about-us__title', {
     scrollTrigger: {
         trigger: '.about-us', 
@@ -1099,98 +1098,91 @@ aboutUs.from('.about-us__title', {
     width: '100%',
     height: '0',
 })
+}
 //анимация хаотичного появления букв
 // .about-us__quote-top div { добавить в HTML!!!!!!!!!!!!!!!!!!!!!!!!!!
 // 	display: inline-block;
 // }
-const text = document.querySelector('.about-us__quote-top p');//нужный класс
+if(laptopScreen.matches) {
+    const text = document.querySelector('.about-us__quote-top p');//нужный класс
 
-const splitText = (el) => {
-	el.innerHTML = el.textContent.replace(/(\S*)/g, m => {
-  return `<div class="word">` +
-			m.replace(/(-|#|@)?\S(-|#|@)?/g, "<div class='letter'>$&</div>") +
-			`</div>`;
-	});
-	return el;
-};
+    const splitText = (el) => {
+        el.innerHTML = el.textContent.replace(/(\S*)/g, m => {
+             return `<div class="word">` +
+                m.replace(/(-|#|@)?\S(-|#|@)?/g, "<div class='letter'>$&</div>") +
+                `</div>`;
+        });
+        return el;
+    };
 
-const split = splitText(text);
+    const split = splitText(text);
 
-function random(min, max){
-  return (Math.random() * (max - min)) + min;
+    function random(min, max){
+    return (Math.random() * (max - min)) + min;
+    }
+
+    Array.from(split.querySelectorAll('.letter')).forEach((el, idx) => {
+        TweenMax.from(el, 2.5, {//2,5 - скорость анимации
+            scrollTrigger: {
+                trigger: '.about-us',//тригер - блок
+                start: 'top top', 
+                end: '+=600',    
+            },
+            opacity: 0,
+            scale: .1,
+            x: random(-500, 500),
+            y: random(-500, 500),
+            z: random(-500, 500),
+            delay: idx * 0.02,
+            repeat: 0,
+        })
+    });
 }
 
-Array.from(split.querySelectorAll('.letter')).forEach((el, idx) => {
-	TweenMax.from(el, 2.5, {//2,5 - скорость анимации
-        scrollTrigger: {
-            trigger: '.about-us',//тригер - блок
-            start: 'top top', 
-            end: '+=600',    
-        },
-		opacity: 0,
-		scale: .1,
-		x: random(-500, 500),
-		y: random(-500, 500),
-		z: random(-500, 500),
-		delay: idx * 0.02,
-		repeat: 0,
-	})
-});
 //анимация хаотичного появления букв
 
 //----------------------------------reviews--------------------------------------------//
 
-gsap.to('.reviews__title', {
-    scrollTrigger: {
-        trigger: '.reviews', 
-        start: 'top top', 
-        scrub: true,
-    },
-        yPercent: 100,
-        scale: 0.8,
-        opacity: 0,
-});
-gsap.to('.reviews__slide[data-speed]', {//для идентичных элементов в HTML задаёт data атрибут, например - data-speed="0.15"
-    y: (i, el) =>
-    (1- parseFloat(el.getAttribute('data-speed'))) * //если перед скобкой поставить -, анимация в другую сторону
-    ScrollTrigger.maxScroll(window) / 10,
-    scrollTrigger: {
-        trigger: '.reviews', 
-        start: '200px top', 
-        scrub: 0,
-    },
-});
+if(laptopScreen.matches) {
+    gsap.to('.reviews__title', {
+        scrollTrigger: {
+            trigger: '.reviews', 
+            start: 'top top', 
+            scrub: true,
+        },
+            yPercent: 100,
+            scale: 0.8,
+            opacity: 0,
+    });
+    gsap.to('.reviews__slide[data-speed]', {//для идентичных элементов в HTML задаёт data атрибут, например - data-speed="0.15"
+        y: (i, el) =>
+        (1- parseFloat(el.getAttribute('data-speed'))) * //если перед скобкой поставить -, анимация в другую сторону
+        ScrollTrigger.maxScroll(window) / 10,
+        scrollTrigger: {
+            trigger: '.reviews', 
+            start: '200px top', 
+            scrub: 0,
+        },
+    });
+}
 
 //----------------------------------advantages--------------------------------------------//
 
-gsap.to('.advantages__title', {
-    scrollTrigger: {
-        trigger: '.advantages',  
-        start: 'top bottom', 
-        scrub: true,
-    },
-        yPercent: 100,
-        scale: 0,
-        opacity: 0,
-});
-gsap.from('.advantages__image', {
-    scrollTrigger: {
-        trigger: '.advantages', 
-        // start: '-10% top', 
-        start: 'top bottom', 
-        end: '60%',
-        scrub: true,
-    },
-        scale: 0,
-        transformOrigin: 'left center',
-        ease: 'none',
-        stagger: 1,
-});
-
-if(smailTablet.matches) {
+if(laptopScreen.matches) {
+    gsap.to('.advantages__title', {
+        scrollTrigger: {
+            trigger: '.advantages',  
+            start: 'top bottom', 
+            scrub: true,
+        },
+            yPercent: 100,
+            scale: 0,
+            opacity: 0,
+    });
     gsap.from('.advantages__image', {
         scrollTrigger: {
             trigger: '.advantages', 
+            // start: '-10% top', 
             start: 'top bottom', 
             end: '60%',
             scrub: true,
@@ -1198,151 +1190,156 @@ if(smailTablet.matches) {
             scale: 0,
             transformOrigin: 'left center',
             ease: 'none',
-            stagger: 0.5,
-    }); 
+            stagger: 1,
+    });
 }
 
 //----------------------------------feedback-form--------------------------------------------//
-
-gsap.from('.feedback-form__map', {
-    scrollTrigger: {
-        trigger: '.feedback-form',  
-        start: 'center bottom', 
-        end: '+=200px',
-        scrub: true,
-    },
-        xPercent: -100,
-});
-gsap.from('.feedback-form__form', {
-    scrollTrigger: {
-        trigger: '.feedback-form',  
-        start: 'center bottom', 
-        end: '+=250px',
-        scrub: true,
-    },
-        xPercent: 100,
-});
-gsap.to('.form__title', {
-    scrollTrigger: {
-        trigger: '.feedback-form',  
-        scrub: true,
-    },
-        opacity: 0,
-});
+if(laptopScreen.matches) {
+    gsap.from('.feedback-form__map', {
+        scrollTrigger: {
+            trigger: '.feedback-form',  
+            start: 'center bottom', 
+            end: '+=200px',
+            scrub: true,
+        },
+            xPercent: -100,
+    });
+    gsap.from('.feedback-form__form', {
+        scrollTrigger: {
+            trigger: '.feedback-form',  
+            start: 'center bottom', 
+            end: '+=250px',
+            scrub: true,
+        },
+            xPercent: 100,
+    });
+    gsap.to('.form__title', {
+        scrollTrigger: {
+            trigger: '.feedback-form',  
+            scrub: true,
+        },
+            opacity: 0,
+    });
+}
 
 //----------------------------------discount--------------------------------------------//
 
-const discount = gsap.timeline()
-discount.from('.discount__title', {
-    scrollTrigger: {
-        trigger: '.discount', 
-        start: 'top bottom', 
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: 50,
-}).from('.discount__text', {
-    scrollTrigger: {
-        trigger: '.discount', 
-        start: 'top bottom', 
-        end: '+=500',
-        scrub: true,      
-    },
-    opacity: 0,
-    scale: 0,
-}).from('.discount__input', {
-    scrollTrigger: {
-        trigger: '.discount', 
-        start: 'top center', 
-        end: '+=500',
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: 300,
-}).from('.discount__btn', {
-    scrollTrigger: {
-        trigger: '.discount', 
-        start: 'top center', 
-        end: '+=500',
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: 300,
-})
+if(laptopScreen.matches) {
+    const discount = gsap.timeline()
+    discount.from('.discount__title', {
+        scrollTrigger: {
+            trigger: '.discount', 
+            start: 'top bottom', 
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: 50,
+    }).from('.discount__text', {
+        scrollTrigger: {
+            trigger: '.discount', 
+            start: 'top bottom', 
+            end: '+=500',
+            scrub: true,      
+        },
+        opacity: 0,
+        scale: 0,
+    }).from('.discount__input', {
+        scrollTrigger: {
+            trigger: '.discount', 
+            start: 'top center', 
+            end: '+=500',
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: 300,
+    }).from('.discount__btn', {
+        scrollTrigger: {
+            trigger: '.discount', 
+            start: 'top center', 
+            end: '+=500',
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: 300,
+    })
+}
 
 //----------------------------------footer--------------------------------------------//
 
-const footer = gsap.timeline()
-footer.from('.menu-footer__list--title', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=200',
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: 50,
-    stagger: 0.2
-}).from('.menu-footer__list li', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=200',
-        scrub: true,      
-    },
-    opacity: 0,
-    xPercent: 50,
-    stagger: 0.2
-}).from('.footer__tel', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100%  top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: 100,
-}).from('.footer__icon-telegram', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    yPercent: 100,
-}).from('.footer__icon-whatsApp', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    yPercent: 150,
-}).from('.footer__btn-opacity', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    xPercent: -100,
-    opacity: 0,
-}).from('.footer__adress', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-100% top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    opacity: 0,
-    yPercent: -100,
-}).from('.footer__input-wrapper', {
-    scrollTrigger: {
-        trigger: '.footer', 
-        start: '-90% top', 
-        end: '+=300',
-        scrub: true,      
-    },
-    xPercent: 200,
-    opacity: 0,
-})
+if(laptopScreen.matches) {
+    const footer = gsap.timeline()
+    footer.from('.menu-footer__list--title', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=200',
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: 50,
+        stagger: 0.2
+    }).from('.menu-footer__list li', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=200',
+            scrub: true,      
+        },
+        opacity: 0,
+        xPercent: 50,
+        stagger: 0.2
+    }).from('.footer__tel', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100%  top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: 100,
+    }).from('.footer__icon-telegram', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        yPercent: 100,
+    }).from('.footer__icon-whatsApp', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        yPercent: 150,
+    }).from('.footer__btn-opacity', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        xPercent: -100,
+        opacity: 0,
+    }).from('.footer__adress', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-100% top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        opacity: 0,
+        yPercent: -100,
+    }).from('.footer__input-wrapper', {
+        scrollTrigger: {
+            trigger: '.footer', 
+            start: '-90% top', 
+            end: '+=300',
+            scrub: true,      
+        },
+        xPercent: 200,
+        opacity: 0,
+    })
+}
