@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <title>trinity</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <meta name="description" content="trinity">
+        <meta name="keywords" content="trinity">
+        <meta name="author" content="Автор">
+        <meta name="image" content="./img/Logo.svg">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="agropropark">
+        <meta property="og:description" content="trinity">
+        <meta property="og:image" content="./img/Logo.svg">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="address=no">
+
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js defer"></script> -->
+        <!-- <script src="js/swiper-bundle.min.js" defer></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+        <div class="content">
+
+        <div class="header">
+            <div class="header__container container">
+                <div class="header__menu menu-header">
+                    <div class="burger-icon">
+                        <svg class="burger-icon__menu-open menu-open">
+                            <use xlink: href="sprite.svg#menu-open"></use>
+                        </svg>
+                        <svg class="burger-icon__menu-close menu-close  ">
+                            <use xlink: href="sprite.svg#menu-close"></use>
+                        </svg>
+                    </div>  
+                    <nav class="menu-header__body menu">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a class="menu__sub-link link-hover" href="#">Car List</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__sub-link link-hover" href="#">Yacht list</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__sub-link link-hover" href="#">Chauffeur</a>
+                            </li>
+                            <li class="menu__item menu__item_none">
+                                <a class="menu__sub-link link-hover" href="#">Conditions</a>
+                            </li>
+                            <li class="menu__item menu__item_none">
+                                <a class="menu__sub-link link-hover" href="#">Testimonials</a>
+                            </li>
+                            <li class="menu__item menu__item_none">
+                                <a class="menu__sub-link link-hover" href="#">Articles</a>
+                            </li>
+                            <li class="menu__item menu__item_none">
+                                <a class="menu__sub-link link-hover" href="#">About Us</a>
+                            </li>
+                            <li class="menu__item menu__item_none">
+                                <a class="menu__sub-link link-hover" href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__logo logo">
+                        <img class="logo__img" src="./img/logo.svg" alt="logo">
+                        <img class="logo__text" src="./img/logo-text.svg" alt="logo">
+                    </div>
+                    <div class="header__info info-header">
+                        <div class="info-header__call">
+                            <a class="info-header__contact" href="tel:971585907875">+971 58 590 7875</a>
+                        </div>  
+                        <div class="info-header__city city-header" data-spollers>
+                            <button class="city-header__dubai" tabindex="-1" type="button" data-spoller>  
+                                <p>Dubai</p>
+                                <svg class="city-header__icon-arrow icon-arrow">
+                                    <use xlink: href="sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <div class="city-header__body">
+                                <p>Dubai</p>
+                                <p>Moscow</p>
+                                <p>Budapest</p>
+                                <p>Wiesbaden</p>
+                            </div>
+                        </div> 
+                        <div class="info-header__language language" data-spollers>
+                            <button class="language__ru" tabindex="-1" type="button" data-spoller>  
+                                <p>eng</p>
+                                <svg class="language__icon-arrow icon-arrow">
+                                    <use xlink: href="sprite.svg#arrow"></use>
+                                </svg>
+                            </button>
+                            <div class="language__body">
+                                <p>ru</p>
+                                <p>ukr</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="header__bg-burgerMenu bg-burgerMenu">
+                        <img src="./img/home/menu-bg.jpg" alt="">
+                        <div class="bg-burgerMenu__adress">
+                            <div class="bg-burgerMenu__adress-content container">
+                                <div class="bg-burgerMenu__adress-body">
+                                    24 4th St - Al Quoz - Al Quoz Industrial Area 3 - Dubai
+                                </div>
+                                <div class="bg-burgerMenu__phone">
+                                    <div class="info-header__call">
+                                        <a class="info-header__contact" href="tel:971585907875">+971 58 590 7875</a>
+                                    </div> 
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <section class="home" style="background-image: url(./img/home/bg.jpg);">
+                <div class="home__container container">
+                    <div class="home__body">
+                        <h1 class="home__title">Dubai</h1>
+                        <p class="home__text">luxury car rental</p>  
+                    </div>
+                    <div class="home__messanger container">
+                        <a class="home__icon-telegram" href="#!">
+                            <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.76107 14.1053L1.9366 11.5912C1.3249 11.3266 0.936063 10.716 0.955795 10.0498C0.976688 9.38354 1.40035 8.79738 2.02714 8.57104C6.27884 7.03193 19.1384 2.37515 22.8643 1.02523C23.4284 0.82211 24.0586 0.945146 24.5044 1.34559C24.9501 1.7472 25.1381 2.36122 24.9953 2.9439C24.1666 6.29604 21.6038 16.6705 20.8214 19.8369C20.6856 20.3883 20.2713 20.8282 19.7304 20.9976C19.1883 21.1683 18.5975 21.0429 18.1715 20.668L14.2193 17.1963L11.126 20.1619C10.6814 20.5879 10.0361 20.726 9.4557 20.5206C8.87651 20.314 8.46331 19.7986 8.38787 19.1881L7.76107 14.1053ZM18.9759 18.595L22.7575 3.2863L3.84019 10.1368L8.83358 12.2935C9.36287 12.5221 9.73197 13.0143 9.80277 13.5865L10.3483 18.0135L12.6337 15.8232L12.4318 15.6491C12.0824 15.3508 11.877 14.919 11.8642 14.4605C11.8503 14.002 12.0325 13.5598 12.3633 13.2418C13.6041 12.052 16.9144 8.87979 16.9144 8.87979C17.3311 8.4805 17.9928 8.49443 18.392 8.91113C18.7902 9.32666 18.7762 9.98827 18.3607 10.3876L14.1798 14.3955L14.8681 14.9851L18.9759 18.595Z" fill="white"/>
+                            </svg>    
+                        </a>
+                        <a class="home__icon-whatsApp" href="#!">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.75 15.5C18.5 15.375 16.875 14.625 16.625 14.5C16.375 14.375 16.125 14.375 15.875 14.625C15.625 14.875 15.125 15.625 14.875 15.875C14.75 16.125 14.5 16.125 14.25 16C13.375 15.625 12.5 15.125 11.75 14.5C11.125 13.875 10.5 13.125 10 12.375C9.875 12.125 10 11.875 10.125 11.75C10.25 11.625 10.375 11.375 10.625 11.25C10.75 11.125 10.875 10.875 10.875 10.75C11 10.625 11 10.375 10.875 10.25C10.75 10.125 10.125 8.625 9.875 8C9.75 7.125 9.5 7.125 9.25 7.125H8.625C8.375 7.125 8 7.375 7.875 7.5C7.125 8.25 6.75 9.125 6.75 10.125C6.875 11.25 7.25 12.375 8 13.375C9.375 15.375 11.125 17 13.25 18C13.875 18.25 14.375 18.5 15 18.625C15.625 18.875 16.25 18.875 17 18.75C17.875 18.625 18.625 18 19.125 17.25C19.375 16.75 19.375 16.25 19.25 15.75L18.75 15.5ZM21.875 4.125C17 -0.75 9.125 -0.75 4.25 4.125C0.25 8.125 -0.5 14.25 2.25 19.125L0.5 25.5L7.125 23.75C9 24.75 11 25.25 13 25.25C19.875 25.25 25.375 19.75 25.375 12.875C25.5 9.625 24.125 6.5 21.875 4.125ZM18.5 21.625C16.875 22.625 15 23.25 13 23.25C11.125 23.25 9.375 22.75 7.75 21.875L7.375 21.625L3.5 22.625L4.5 18.875L4.25 18.5C1.25 13.5 2.75 7.25 7.625 4.125C12.5 1 18.75 2.625 21.75 7.375C24.75 12.25 23.375 18.625 18.5 21.625Z" fill="white"/>
+                            </svg> 
+                        </a>
+                    </div> 
+                </div>
+                <div class="home__scroll">
+                    <span class="home__scroll-elem"></span>
+                </div>
+            </section>
+
+            <section class="slider-main">
+                <div class="slider-main__thumbs">
+                    <div class="swiper-container"> <!-- Слайдер с превью -->
+                        <div class="swiper-wrapper slider-main__wrapper">
+                            <div class="swiper-slide slider-main__slide">
+                                <div class="slider-main__image">
+                                <img src="./img/main-slider/01.jpg" alt="Rent Lamborghini Huracan STO">
+                                </div>
+                                <div class="slider-main__info info-slider">
+                                    <div class="info-slider__model">Rent Lamborghini Huracan STO</div>
+                                    <div class="info-slider__description">
+                                        <p class="info-slider__title">Rent is from aed</p>
+                                        <p class="info-slider__praice">2 400$</p>
+                                        <p class="info-slider__info">per day</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slider-main__slide">
+                                <div class="slider-main__image">
+                                <img src="./img/main-slider/02.jpg" alt="Rent Lamborghini Huracan STO">
+                                </div>
+                                <div class="slider-main__info info-slider">
+                                    <div class="info-slider__model">Audi Huracan EVO Spyder RS6</div>
+                                    <div class="info-slider__description">
+                                        <p class="info-slider__title">Rent is from aed</p>
+                                        <p class="info-slider__praice">2 400$</p>
+                                        <p class="info-slider__info">per day</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slider-main__slide">
+                                <div class="slider-main__image">
+                                <img src="./img/main-slider/03.jpg" alt="Rent Lamborghini Huracan STO">
+                                </div>
+                                <div class="slider-main__info info-slider">
+                                    <div class="info-slider__model">Range Rover Autobiography New 2022</div>
+                                    <div class="info-slider__description">
+                                        <p class="info-slider__title">Rent is from aed</p>
+                                        <p class="info-slider__praice">2 400$</p>
+                                        <p class="info-slider__info">per day</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-main__control">
+                            <div class="slider__prev"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="23" cy="23" r="22.25" transform="rotate(-180 23 23)" fill="#161516" stroke="url(#paint0_linear_2204_486)" stroke-width="1.5"/>
+                                <g clip-path="url(#clip0_2204_486)">
+                                <path d="M23.6931 19.2968L29.7127 25.3166C30.0958 25.6996 30.0958 26.3204 29.7127 26.7032C29.3299 27.0859 28.7091 27.0859 28.3263 26.7032L22.9999 21.3766L17.6737 26.703C17.2907 27.0858 16.67 27.0858 16.2872 26.703C15.9043 26.3202 15.9043 25.6994 16.2872 25.3165L22.3069 19.2967C22.4984 19.1053 22.7491 19.0097 22.9999 19.0097C23.2508 19.0097 23.5017 19.1055 23.6931 19.2968Z" fill="url(#paint1_linear_2204_486)"/>
+                                </g>
+                                <defs>
+                                <linearGradient id="paint0_linear_2204_486" x1="23" y1="47.5" x2="23" y2="-3.5" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#2C2C2C"/>
+                                <stop offset="1" stop-color="#161516" stop-opacity="0"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_2204_486" x1="24" y1="19" x2="24" y2="28.5" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#B7B7B7"/>
+                                <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                </linearGradient>
+                                <clipPath id="clip0_2204_486">
+                                <rect width="14" height="14" fill="white" transform="translate(16 30) rotate(-90)"/>
+                                </clipPath>
+                                </defs>
+                                </svg></div>
+                            <div class="slider__next">
+                                <svg width="46" height="48" viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="23" cy="23" r="22.25" fill="#161516" stroke="url(#paint0_linear_2204_479)" stroke-width="1.5"/>
+                                    <circle cx="23" cy="25" r="22.25" fill="#161516" stroke="url(#paint1_linear_2204_479)" stroke-width="1.5"/>
+                                    <g clip-path="url(#clip0_2204_479)">
+                                    <path d="M22.3069 28.7032L16.2873 22.6834C15.9042 22.3005 15.9042 21.6796 16.2873 21.2968C16.6701 20.9141 17.2909 20.9141 17.6737 21.2968L23.0001 26.6234L28.3263 21.297C28.7093 20.9142 29.33 20.9142 29.7128 21.297C30.0957 21.6798 30.0957 22.3006 29.7128 22.6835L23.6931 28.7033C23.5016 28.8947 23.2509 28.9903 23.0001 28.9903C22.7492 28.9903 22.4983 28.8945 22.3069 28.7032Z" fill="url(#paint2_linear_2204_479)"/>
+                                    </g>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_2204_479" x1="23" y1="47.5" x2="23" y2="-3.5" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2C2C2C"/>
+                                    <stop offset="1" stop-color="#161516" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_2204_479" x1="23" y1="49.5" x2="23" y2="-1.5" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2C2C2C"/>
+                                    <stop offset="1" stop-color="#161516" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint2_linear_2204_479" x1="22" y1="29" x2="22" y2="19.5" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#B7B7B7"/>
+                                    <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                    </linearGradient>
+                                    <clipPath id="clip0_2204_479">
+                                    <rect width="14" height="14" fill="white" transform="translate(30 18) rotate(90)"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <div class="slider__double double-sliders">
+                    <div class="double-sliders__wrapper">
+                        <div class="double-sliders__search search-slider">
+                            <h2 class="search-slider__text">Most Popular</h2>
+                            <div class="search-slider__input-wrapper input-wrapper">
+                                <input class="search-slider__input input-mainStile" id="formName" type="text" name="name" placeholder="Car search">
+                                <button>
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.7087 25.945C20.9143 25.945 25.9449 20.9143 25.9449 14.7087C25.9449 8.50311 20.9143 3.47247 14.7087 3.47247C8.50305 3.47247 3.47241 8.50311 3.47241 14.7087C3.47241 20.9143 8.50305 25.945 14.7087 25.945Z" stroke="#434343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22.5225 23.1062L26.9275 27.5" stroke="#434343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                   
+                                </button>
+                            </div>
+                        </div>
+                        <div class="swiper-container double-sliders__swiper"> <!-- Слайдер с изображениями -->
+                            <div class="swiper-wrapper">
+                                <a class="swiper-slide double-sliders__slide" href="#!">
+                                    <p class="double-sliders__model">Lamborghini</p>
+                                    <p class="double-sliders__description">Huracan EVO Spyder</p>
+                                </a>
+                                <a class="swiper-slide double-sliders__slide" href="#!">
+                                    <p class="double-sliders__model">Ferrari</p>
+                                    <p class="double-sliders__description">Huracan EVO Spyder</p>
+                                </a>
+                                <a class="swiper-slide double-sliders__slide" href="#!">
+                                    <p class="double-sliders__model">Range Rover</p>
+                                    <p class="double-sliders__description">Huracan EVO Spyder</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="double-sliders__botton btn">View all</div>
+                </div>
+            </section>
+
+            <section class="choice-car">
+                <nav class="choice-car__tabs">
+                    <ul class="choice-car__list">
+                        <li class="choice-car__item">
+                            <a class="choice-car__sub-link link-hover _active-tab" data-tab="tab-1" href="#!">Special Offer </a>
+                        </li>
+                        <li class="choice-car__item">
+                            <a class="choice-car__sub-link link-hover" data-tab="tab-2" href="#!">New car</a>
+                        </li>
+                        <li class="choice-car__item">
+                            <a class="choice-car__sub-link link-hover" data-tab="tab-3" href="#!">Most popular</a>
+                        </li>
+                        <li class="choice-car__item">
+                            <a class="choice-car__sub-link link-hover" data-tab="tab-4" href="#!">Daily</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="choice-car__content hidden-tab-content" id="tab-1">
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/02.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Lamborghini Urus</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/03.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Ferrari Roma</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/04.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Rolls-Royce Ghost</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/05.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Porsche 911 Turbo S</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="choice-car__content hidden-tab-content" id="tab-2">
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/01.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Lamborghini Urus</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/04.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Rolls-Royce Ghost</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/05.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Porsche 911 Turbo S</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="choice-car__content hidden-tab-content" id="tab-3">
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/04.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Lamborghini Urus</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/02.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Ferrari Roma</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/01.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Rolls-Royce Ghost</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/03.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Porsche 911 Turbo S</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="choice-car__content hidden-tab-content" id="tab-4">
+                    <div class="choice-car__row">
+                        <div class="choice-car__card card-car">
+                            <div class="card-car__image">
+                                <img src="./img/main-slider/03.jpg" alt="card-car">
+                            </div>
+                            <div class="card-car__info">
+                                <div class="card-car__model">Ferrari Roma</div>
+                                <button class="card-car__btn btn-opacity"><span>Rent</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="choice-car__btn btn">View all</div>
+            </section>
+
+            <section class="about-us">
+                <div class="container">
+                    <h2 class="about-us__title">About Us</h2>
+                    <div class="about-us__counter-body counter">
+                        <div class="counter">
+                            <div id="counter" class="counter__amount">
+                                <div data-digits-counter class="counter__number counter__number_shadow">8</div>
+                                <div data-digits-counter class="counter__number counter__number_text">8</div>
+                                <div class="counter__title counter__title_1">year</div>
+                            </div>
+                            <p class="counter__text">We've come a long way from a 2-people company to winning at Webby's.</p>
+                        </div> 
+                        <div class="counter">
+                            <div id="counter" class="counter__amount">
+                                <div data-digits-counter class="counter__number counter__number_shadow">72</div>
+                                <div data-digits-counter class="counter__number counter__number_text">72</div>
+                                <div class="counter__title counter__title_2">cars</div>
+                            </div>
+                            <p class="counter__text">We've come a long way from a 2-people company to winning at Webby's.</p>
+                        </div> 
+                        <div class="counter">
+                            <div id="counter" class="counter__amount">
+                                <div data-digits-counter class="counter__number counter__number_shadow">190</div>
+                                <div data-digits-counter class="counter__number counter__number_text">190</div>
+                                <div class="counter__title counter__title_3">people</div>
+                            </div>
+                            <p class="counter__text">We've come a long way from a 2-people company to winning at Webby's.</p>
+                        </div> 
+                    </div>
+                    <figure class="about-us__quote">
+                        <blockquote class="about-us__quote-top">
+                            <p>I’m with cars for over 18 years. My auto passion and attention to details will make your experience with us second to none. Guaranteed.</p>
+                        </blockquote>
+                        <figcaption class="about-us__quote-bottom">Kirill Aliev, MBA <cite>CEO Trinity car rental boutique</cite></figcaption>
+                    </figure>               
+                </div>
+                <div class="about-us__images">
+                    <img src="./img/about-us/image1.jpg" alt="img">
+                </div>
+            </section>
+            
+            <section class="reviews">
+                <h2 class="reviews__title">Reviews</h2>
+                <div class="swiper reviews__swiper">
+                    <div class="swiper-wrapper reviews__wrapper">
+                      <a class="swiper-slide reviews__slide" data-speed="0.15" href="https://youtu.be/hLMfaxOnqM0" target="_blank">
+                        <img class="reviews__image" src="./img/riviews/01.jpg" alt="image">
+                      </a>
+                      <a class="swiper-slide reviews__slide" data-speed="0.35" href="https://youtu.be/hLMfaxOnqM0" target="_blank">
+                        <img class="reviews__image" src="./img/riviews/02.jpg" alt="image">
+                      </a>
+                      <a class="swiper-slide reviews__slide" data-speed="0.25" href="https://youtu.be/hLMfaxOnqM0" target="_blank">
+                        <img class="reviews__image" src="./img/riviews/03.jpg" alt="image">
+                      </a>
+                      <a class="swiper-slide reviews__slide" data-speed="0.45" href="https://youtu.be/hLMfaxOnqM0" target="_blank">
+                        <img class="reviews__image" src="./img/riviews/04.jpg" alt="image">
+                      </a>
+                      <a class="swiper-slide reviews__slide" data-speed="0.95" href="https://youtu.be/hLMfaxOnqM0" target="_blank">
+                        <img class="reviews__image" src="./img/riviews/01.jpg" alt="image">
+                      </a>
+                    </div>
+                    <div class="reviews__contol">
+                        <div class="reviews__prev"></div>
+                        <div class="reviews__next"></div>
+                    </div>
+                  
+                </div>
+            </section>
+
+            <section class="advantages">
+                <h2 class="advantages__title">Advantages</h2>
+                <div class="advantages__body">
+                    <div class="advantages__image">
+                        <img src="/img/advantages/01.jpg" alt="image">
+                        <div class="advantages__text">40+ unique cars for rent from our fleet</div>
+                    </div>
+                    <div class="advantages__image">
+                        <img src="/img/advantages/02.jpg" alt="image">
+                        <div class="advantages__text">Delivery and return of cars in Dubai 24/7</div>
+                    </div>
+                    <div class="advantages__image">
+                        <img src="/img/advantages/01.jpg" alt="image">
+                        <div class="advantages__text">Insurance without a deductible for each car</div>
+                    </div>
+                    <div class="advantages__image">
+                        <img src="/img/advantages/02.jpg" alt="image">
+                        <div class="advantages__text">No video or audio recording in the car</div>
+                    </div>
+                    <div class="advantages__image">
+                        <img src="/img/advantages/01.jpg" alt="image">
+                        <div class="advantages__text">24/7 technical support</div>
+                    </div>
+                    <div class="advantages__image">
+                        <img src="/img/advantages/02.jpg" alt="image">
+                        <div class="advantages__text">All models have a premium package</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feedback-form">
+                <div class="feedback-form__map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79325.98992236983!2d55.23431266075121!3d25.25467671376044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2z0JTRg9Cx0LDQuSAtINCe0LHRitC10LTQuNC90LXQvdC90YvQtSDQkNGA0LDQsdGB0LrQuNC1INCt0LzQuNGA0LDRgtGL!5e0!3m2!1sru!2sru!4v1687939544344!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="feedback-form__form form">
+                    <form class="form__body" action="#" id="form">
+                        <h2 class="form__title">Ask us anything</h2>
+                        <div class="form__input-wrapper input-wrapper">
+                            <input class="form__input input-mainStile _req" id="formName" type="text" name="name" placeholder="Name">
+                        </div>
+                        <div class="form__input-wrapper input-wrapper">
+                            <input class="form__input input-mainStile _req" id="formEmail" type="text" name="email" placeholder="E-mail">
+                        </div>
+                        <div class="form__input-wrapper input-wrapper">
+                            <input class="form__input input-mainStile _req" id="formPhone" type="tel" name="phone" placeholder="+7 (999) 999 - 99 - 99">
+                        </div>
+                        <div class="form__input-wrapper input-wrapper input-wrapper_big">
+                            <textarea class="form__input input-mainStile" id="formMessage" type="tel" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <button class="form__button btn-opacity" type="submit">Send the request</button>
+                    </form>    
+                </div>
+            </section>
+
+            <section class="discount">
+                <div class="discount__body">
+                    <div class="discount__form">
+                        <h3 class="discount__title">Get a discount of up to <span>60%</span></h3>
+                        <p class="discount__text">Get the latest articles and business updates that you need to know, you’ll even get special recommendations weekly.</p>
+                        <div class="discount__form-iput">
+                            <input class="discount__input" id="formEmail" type="text" name="email" placeholder="Your email">
+                            <button class="discount__btn btn">Receive</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="list-car">
+                <nav class="choice-car__tabs list-car__tabs">
+                    <ul class="choice-car__list list-car__list">
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Audi</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">BMW</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover _active-tab" href="#!">Rolls-Royce</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Cadillac</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Maserati</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Lamborghini</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Bentley</a>
+                        </li>
+                        <li class="choice-car__item list-car__item">
+                            <a class="choice-car__sub-link link-hover" href="#!">Porsche</a>
+                        </li>  
+                    </ul>
+                </nav>
+            </section>
+
+        </div>
+<div class="footer">
+    <div class="footer__top">
+        <div class="footer__container container">
+            <nav class="footer__menu menu-footer">
+                <div class="menu-footer__body">
+                    <ul class="menu-footer__list">
+                        <h4 class="menu-footer__list--title">For Customers</h4>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">About Us</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Conditions</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Testimonials</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Articles</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Contacts</a>
+                        </li>
+                    </ul>
+                    <ul class="menu-footer__list">
+                        <h4 class="menu-footer__list--title">Car List</h4>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">SUVs</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Convertibles</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Sports Cars</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Premium</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Coupe</a>
+                        </li>
+                    </ul>
+                    <ul class="menu-footer__list">
+                        <h4 class="menu-footer__list--title">Service</h4>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Car List</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Yacht list</a>
+                        </li>
+                        <li class="menu-footer__item">
+                            <a class="menu-footer__sub-link link-hover" href="#">Chauffeur</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="footer__contact">
+                <div class="footer__call">
+                    <a class="footer__tel" href="tel:971585907875">+971 58 590 7875</a>
+                    <a class="home__icon-telegram footer__icon-telegram" href="#!">
+                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.81027 13.8803L3.1507 11.9528C2.66134 11.7499 2.35027 11.2818 2.36605 10.7711C2.38277 10.2603 2.7217 9.81087 3.22313 9.63734C6.62449 8.45736 16.9121 4.88716 19.8928 3.85223C20.3441 3.6965 20.8483 3.79083 21.2049 4.09784C21.5615 4.40574 21.7119 4.87648 21.5977 5.3232C20.9347 7.89318 18.8844 15.8469 18.2586 18.2745C18.1499 18.6972 17.8184 19.0345 17.3857 19.1644C16.9521 19.2952 16.4794 19.1991 16.1386 18.9117L12.9768 16.25L10.5022 18.5237C10.1465 18.8503 9.63026 18.9562 9.16598 18.7987C8.70262 18.6403 8.37207 18.2452 8.31171 17.7771L7.81027 13.8803ZM16.7821 17.3224L19.8074 5.58571L4.67357 10.8378L8.66828 12.4912C9.09171 12.6665 9.38699 13.0438 9.44363 13.4825L9.88006 16.8765L11.7084 15.1973L11.5468 15.0638C11.2673 14.8351 11.103 14.5041 11.0928 14.1526C11.0816 13.8011 11.2274 13.4621 11.4921 13.2182C12.4847 12.3061 15.133 9.87405 15.133 9.87405C15.4663 9.56793 15.9956 9.57861 16.3151 9.89808C16.6336 10.2167 16.6224 10.7239 16.29 11.03L12.9453 14.1028L13.4959 14.5548L16.7821 17.3224Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a class="home__icon-whatsApp footer__icon-whatsApp" href="#!">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_2204_679)">
+                            <path d="M16.1356 13.211C15.9146 13.1011 14.4778 12.4419 14.2568 12.3321C14.0358 12.2222 13.8147 12.2222 13.5937 12.4419C13.3727 12.6617 12.9306 13.3208 12.7096 13.5406C12.599 13.7603 12.378 13.7603 12.157 13.6504C11.3833 13.3208 10.6097 12.8814 9.94661 12.3321C9.39402 11.7828 8.84143 11.1236 8.39936 10.4644C8.28884 10.2447 8.39936 10.025 8.50987 9.91511C8.62039 9.80524 8.73091 9.58552 8.95195 9.47566C9.06246 9.36579 9.17298 9.14607 9.17298 9.0362C9.2835 8.92634 9.2835 8.70662 9.17298 8.59675C9.06246 8.48689 8.50987 7.16854 8.28884 6.61923C8.17832 5.85019 7.95728 5.85019 7.73625 5.85019H7.18366C6.96262 5.85019 6.63107 6.06991 6.52055 6.17978C5.85745 6.83895 5.52589 7.60799 5.52589 8.48689C5.63641 9.47566 5.96796 10.4644 6.63107 11.3433C7.84677 13.1011 9.39402 14.5293 11.2728 15.4082C11.8254 15.628 12.2675 15.8477 12.8201 15.9576C13.3727 16.1773 13.9252 16.1773 14.5884 16.0674C15.362 15.9576 16.0251 15.4082 16.4672 14.7491C16.6882 14.3096 16.6882 13.8702 16.5777 13.4307L16.1356 13.211ZM18.8986 3.21348C14.5884 -1.07116 7.62573 -1.07116 3.31554 3.21348C-0.221036 6.72909 -0.884143 12.1124 1.54725 16.397L0 22L5.85745 20.4619C7.51521 21.3408 9.2835 21.7803 11.0518 21.7803C17.1303 21.7803 21.9931 16.9463 21.9931 10.9039C22.1036 8.04744 20.8879 5.30087 18.8986 3.21348ZM15.9146 18.5943C14.4778 19.4732 12.8201 20.0225 11.0518 20.0225C9.39402 20.0225 7.84677 19.583 6.41004 18.814L6.07848 18.5943L2.65243 19.4732L3.53657 16.1773L3.31554 15.8477C0.663107 11.4532 1.98932 5.96005 6.29952 3.21348C10.6097 0.466917 16.1356 1.89513 18.788 6.06991C21.4405 10.3546 20.2248 15.9576 15.9146 18.5943Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_2204_679">
+                            <rect width="22" height="22" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                </div> 
+                <div class="footer__btn-opacity btn-opacity">REQUEST A CALLBACK</div>
+                <div class="footer__adress">
+                    24 4th St - Al Quoz - Al Quoz Industrial Area 3 - Dubai
+                </div>
+                <div class="footer__input-wrapper input-wrapper">
+                    <input class="footer__input input-mainStile" id="formEmail" type="text" name="email" placeholder="E-mail">
+                    <div class="footer__btn btn">Submit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="footer__payment">
+            <div class="container">
+                <img src="./img/footer/payment-01.png" alt="icon">
+                <img src="./img/footer/payment-02.png" alt="icon">
+                <img src="./img/footer/payment-03.png" alt="icon">
+                <img src="./img/footer/payment-04.png" alt="icon">
+                <img src="./img/footer/payment-05.png" alt="icon">
+                <img src="./img/footer/payment-06.png" alt="icon">
+                <img src="./img/footer/payment-07.png" alt="icon">
+                <img src="./img/footer/payment-08.png" alt="icon">
+                <img src="./img/footer/payment-09.png" alt="icon">
+                <img src="./img/footer/payment-10.png" alt="icon">
+            </div>
+        </div>
+        <div class="footer__copy copy">
+            <div class="container">
+                <div class="copy__privacy-olicy">Privacy Policy</div>
+                <div class="copy__copirate">©2023 TRINITY. All rights reserved</div>
+                <div class="copy__social">
+                    <a href="#!">
+                        <img src="./img/footer/facebook.svg" alt="facebook">
+                    </a>
+                    <a href="#!">
+                        <img src="./img/footer/tiktok.svg" alt="tiktok">
+                    </a>
+                    <a href="#!">
+                        <img src="./img/footer/youtube.svg" alt="youtube">
+                    </a>
+                    <a href="#!">
+                        <img src="./img/footer/instagram.svg" alt="instagram">
+                    </a>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        
+</div>
+
+</body>
+
+</html>
